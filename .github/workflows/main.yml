@@ -63,7 +63,7 @@ jobs:
         key: ${{ secrets.HOST_PRIVATE_KEY }}
         script: |
           # Выполняет pull образа с DockerHub
-          sudo docker pull blizardsis/infra_actions
+          docker pull blizardsis/infra_actions
           #остановка всех контейнеров
-          sudo docker stop $(sudo docker ps -a -q)
-          sudo docker run --rm -d -p 5000:5000 blizardsis/infra_action
+          docker stop $(docker ps -a -q)
+          docker run --rm -d -p 5000:5000 blizardsis/infra_action
